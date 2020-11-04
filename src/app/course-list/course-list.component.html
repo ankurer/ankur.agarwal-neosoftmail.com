@@ -1,0 +1,29 @@
+<H1>Course List</H1>
+
+<p style="color:red" >{{message}} </p>
+
+<table>
+    <tr>
+      <td>Name</td>
+      <td><input [(ngModel)]="form.title"  name="title" type="text"></td>
+      <td>Address</td>
+      <td><input [(ngModel)]="form.description"  name="address" type="text"> </td>
+      <td ><button (click)="search()">Search</button></td>
+    </tr>  
+  </table>
+
+<table border="1">
+  <tr>
+    <th>ID</th>
+    <th>Title</th>
+    <th>Description</th>
+  </tr>
+  <tr  *ngFor = "let e of list;index as i  " >
+    <td>{{i+1}}</td>
+    <td>{{e.title}}</td>
+    <td>{{e.description}}</td>
+    <td><button (click)="edit(e.id)">Edit</button></td>
+    <td><button (click)="delete(e.id)">Delete</button></td>
+  </tr>
+</table>
+
